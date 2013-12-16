@@ -39,6 +39,7 @@ private:
     void dumpIterationsResults();
     void drawGraphics(bool state);
     void setAxes();
+    void setCurves();
 };
 
 #endif // MAINWINDOW_H

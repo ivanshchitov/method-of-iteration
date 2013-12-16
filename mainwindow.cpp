@@ -135,8 +135,6 @@ void MainWindow::buildIterationResults(int num_of_par) {
             len_n++;
         }
     }
-    nCurve->setSamples(nx, ny, len_n);
-    pCurve->setSamples(px, py, len_p);
 }
 
 void MainWindow::dumpIterationsResults() {
@@ -145,6 +143,7 @@ void MainWindow::dumpIterationsResults() {
 }
 
 void MainWindow::drawGraphics(bool state) {
+    setCurves();
     nCurve->setVisible(state);
     pCurve->setVisible(state);
     ui->qwtPlot->replot(); // перерисовка области рисования
@@ -173,17 +172,30 @@ void MainWindow::on_drawButton_toggled(bool checked)
         return;
     }
     if (ui->alphaRadioButton->isChecked())
-        this->buildIterationResults(1);
+        buildIterationResults(1);
     if (ui->betaRadioButton->isChecked())
-        this->buildIterationResults(2);
+        buildIterationResults(2);
     if (ui->epsilonRadioButton->isChecked())
-        this->buildIterationResults(3);
+        buildIterationResults(3);
     if (ui->gammaRadioButton->isChecked())
-        this->buildIterationResults(4);
+        buildIterationResults(4);
     this->drawGraphics(true);
 }
 
 void MainWindow::on_helpButton_clicked() {
     Dialog *dialog = new Dialog;
     dialog->show();
+}
+
+void MainWindow::setCurves() {
+    if (!ui->redCheckBox->isChecked() && ui->blueCheckBox->isChecked()) {
+        pCurve->setSamples(px, py, len_p);
+    }
+    if (ui->redCheckBox->isChecked() && !ui->blueCheckBox->isChecked()) {
+        nCurve->setSamples(px, py, len_p);
+    }
+    if (ui->redCheckBox->isChecked() && ui->blueCheckBox->isChecked()) {
+        nCurve->setSamples(nx, ny, len_n);
+        pCurve->setSamples(px, py, len_p);
+    }
 }
