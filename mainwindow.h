@@ -20,6 +20,8 @@ private slots:
     void on_enableSizeButton_clicked();
     void on_drawButton_toggled(bool checked);
 
+    void on_helpButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     double *nx, *px, *ny, *py;

@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dialog.h"
 #include <qwt_plot_grid.h>
 
 #define NMAX 5000
@@ -18,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     initGrid();
     on_drawButton_toggled(false);
     ui->drawButton->setCheckable(true);
+    setWindowTitle("Method of Iterations");
 }
 
 MainWindow::~MainWindow()
@@ -179,4 +181,9 @@ void MainWindow::on_drawButton_toggled(bool checked)
     if (ui->gammaRadioButton->isChecked())
         this->buildIterationResults(4);
     this->drawGraphics(true);
+}
+
+void MainWindow::on_helpButton_clicked() {
+    Dialog *dialog = new Dialog;
+    dialog->show();
 }
