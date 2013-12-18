@@ -166,7 +166,8 @@ void MainWindow::setAxes() {
 
 void MainWindow::on_drawButton_toggled(bool checked)
 {
-    if (checked == false) {
+
+    if (checked == false || (!ui->redCheckBox->isChecked() && !ui->blueCheckBox->isChecked())) {
         this->dumpIterationsResults();
         this->drawGraphics(false);
         return;

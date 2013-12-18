@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>698</width>
-    <height>527</height>
+    <height>543</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -146,14 +146,14 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
+        <item row="1" column="0">
          <widget class="QLabel" name="betaLabel">
           <property name="text">
            <string>β</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="1" column="1">
          <widget class="QDoubleSpinBox" name="betaDoubleSpinBox">
           <property name="minimum">
            <double>-100.000000000000000</double>
@@ -166,14 +166,14 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
+        <item row="2" column="0">
          <widget class="QLabel" name="epsilonLabel">
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ε&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
+        <item row="2" column="1">
          <widget class="QDoubleSpinBox" name="epsilonDoubleSpinBox">
           <property name="minimum">
            <double>-100.000000000000000</double>
@@ -186,14 +186,14 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
+        <item row="3" column="0">
          <widget class="QLabel" name="gammaLabel">
           <property name="text">
            <string>γ</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
+        <item row="3" column="1">
          <widget class="QDoubleSpinBox" name="gammaDoubleSpinBox">
           <property name="minimum">
            <double>-100.000000000000000</double>
@@ -206,14 +206,14 @@
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="4" column="0">
          <widget class="QLabel" name="nLabel">
           <property name="text">
            <string>n</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="1">
+        <item row="4" column="1">
          <widget class="QSpinBox" name="nSpinBox">
           <property name="minimum">
            <number>1</number>
@@ -226,14 +226,14 @@
           </property>
          </widget>
         </item>
-        <item row="6" column="0">
+        <item row="5" column="0">
          <widget class="QLabel" name="mLabel">
           <property name="text">
            <string>m</string>
           </property>
          </widget>
         </item>
-        <item row="6" column="1">
+        <item row="5" column="1">
          <widget class="QSpinBox" name="mSpinBox">
           <property name="maximum">
            <number>500</number>
@@ -243,14 +243,14 @@
           </property>
          </widget>
         </item>
-        <item row="7" column="0">
+        <item row="6" column="0">
          <widget class="QLabel" name="pLabel">
           <property name="text">
            <string>p</string>
           </property>
          </widget>
         </item>
-        <item row="7" column="1">
+        <item row="6" column="1">
          <widget class="QSpinBox" name="pSpinBox">
           <property name="minimum">
            <number>1</number>
@@ -263,7 +263,24 @@
           </property>
          </widget>
         </item>
-        <item row="9" column="1">
+        <item row="7" column="0">
+         <widget class="QLabel" name="x0Label">
+          <property name="text">
+           <string>x0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QDoubleSpinBox" name="x0DoubleSpinBox">
+          <property name="minimum">
+           <double>-100.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="1">
            <widget class="QRadioButton" name="epsilonRadioButton">
@@ -295,24 +312,7 @@
           </item>
          </layout>
         </item>
-        <item row="8" column="1">
-         <widget class="QDoubleSpinBox" name="x0DoubleSpinBox">
-          <property name="minimum">
-           <double>-100.000000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>100.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QLabel" name="x0Label">
-          <property name="text">
-           <string>x0</string>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="1">
+        <item row="10" column="1">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QCheckBox" name="blueCheckBox">
@@ -329,13 +329,6 @@
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QCheckBox" name="checkBox">
-          <property name="text">
-           <string>CheckBox</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </item>
