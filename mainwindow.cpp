@@ -166,21 +166,28 @@ void MainWindow::setAxes() {
 
 void MainWindow::on_drawButton_toggled(bool checked)
 {
-
     if (checked == false || (!ui->redCheckBox->isChecked() && !ui->blueCheckBox->isChecked())) {
         this->dumpIterationsResults();
         this->drawGraphics(false);
+        ui->redCheckBox->setEnabled(true);
+        ui->blueCheckBox->setEnabled(true);
         return;
     }
-    if (ui->alphaRadioButton->isChecked())
+    if (ui->alphaRadioButton->isChecked()) {
         buildIterationResults(1);
-    if (ui->betaRadioButton->isChecked())
+    }
+    if (ui->betaRadioButton->isChecked()) {
         buildIterationResults(2);
-    if (ui->epsilonRadioButton->isChecked())
+    }
+    if (ui->epsilonRadioButton->isChecked()) {
         buildIterationResults(3);
-    if (ui->gammaRadioButton->isChecked())
+    }
+    if (ui->gammaRadioButton->isChecked()) {
         buildIterationResults(4);
+    }
     this->drawGraphics(true);
+    ui->redCheckBox->setEnabled(false);
+    ui->blueCheckBox->setEnabled(false);
 }
 
 void MainWindow::on_helpButton_clicked() {
@@ -199,4 +206,37 @@ void MainWindow::setCurves() {
         nCurve->setSamples(nx, ny, len_n);
         pCurve->setSamples(px, py, len_p);
     }
+}
+
+
+void MainWindow::on_alphaRadioButton_clicked()
+{
+    ui->alphaDoubleSpinBox->setEnabled(false);
+    ui->betaDoubleSpinBox->setEnabled(true);
+    ui->epsilonDoubleSpinBox->setEnabled(true);
+    ui->gammaDoubleSpinBox->setEnabled(true);
+}
+
+void MainWindow::on_betaRadioButton_clicked()
+{
+    ui->alphaDoubleSpinBox->setEnabled(true);
+    ui->betaDoubleSpinBox->setEnabled(false);
+    ui->epsilonDoubleSpinBox->setEnabled(true);
+    ui->gammaDoubleSpinBox->setEnabled(true);
+}
+
+void MainWindow::on_epsilonRadioButton_clicked()
+{
+    ui->alphaDoubleSpinBox->setEnabled(true);
+    ui->betaDoubleSpinBox->setEnabled(true);
+    ui->epsilonDoubleSpinBox->setEnabled(false);
+    ui->gammaDoubleSpinBox->setEnabled(true);
+}
+
+void MainWindow::on_gammaRadioButton_clicked()
+{
+    ui->alphaDoubleSpinBox->setEnabled(true);
+    ui->betaDoubleSpinBox->setEnabled(true);
+    ui->epsilonDoubleSpinBox->setEnabled(true);
+    ui->gammaDoubleSpinBox->setEnabled(false);
 }

@@ -19,8 +19,15 @@ public:
 private slots:
     void on_enableSizeButton_clicked();
     void on_drawButton_toggled(bool checked);
-
     void on_helpButton_clicked();
+
+    void on_alphaRadioButton_clicked();
+
+    void on_betaRadioButton_clicked();
+
+    void on_epsilonRadioButton_clicked();
+
+    void on_gammaRadioButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -40,6 +47,7 @@ private:
     void drawGraphics(bool state);
     void setAxes();
     void setCurves();
+    void setEnabledSpinBoxes(int par);
 };
 
 #endif // MAINWINDOW_H
